@@ -26,9 +26,9 @@ Project Structure:
 chrome_extension/
 ├── public/
 │   ├── manifest.json           # Chrome extension manifest
-│   ├── tictoctoe16.png         # 16x16 icon
-│   ├── tictactoe48.png         # 48x48 icon
-│   ├── tictactoe128.png        # 128x128 icon
+│   ├── tictoctoe16.png         # 16x16px icon size
+│   ├── tictactoe48.png         # 48x48px icon size
+│   ├── tictactoe128.png        # 128x128px icon size
 ├── src/
 │   ├── components/
 │   │   └── TicTacToe.js   # Main game component
