@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+README: Offline Tic-Tac-Toe Chrome Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Project Overview:
 
-Currently, two official plugins are available:
+The Offline Tic-Tac-Toe Chrome Extension is a simple, lightweight, and engaging extension built using React.js, TypeScript and for styling SASS is being used. It allows users to play a single-player Tic-Tac-Toe game directly from the Chrome toolbar, even when offline or without internet access. The game is designed for quick entertainment with an intuitive interface and random computer moves.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features:
 
-## Expanding the ESLint configuration
+-> Offline Functionality: Play the game anytime without needing an internet connection.
+-> Single-Player Mode: User vs. Computer gameplay.
+-> Randomized Computer Moves: The computer ensures valid moves while playing.
+-> Dynamic Game State: Handles win, lose, and draw conditions.
+-> Interactive UI: Responsive and minimalistic design for a great user experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+How to Use:
 
-- Configure the top-level `parserOptions` property like this:
+-> Click on the Tic-Tac-Toe icon in the Chrome toolbar.
+-> A popup will appear with the game board.
+-> Make the first move by clicking on any cell.
+-> The computer will make its move automatically.
+-> Continue playing until a win, loss, or draw is achieved.
+-> Click "Restart Game" to reset the board and play again.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Project Structure:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+chrome_extension/
+├── public/
+│   ├── manifest.json           # Chrome extension manifest
+│   ├── tictoctoe16.png         # 16x16 icon
+│   ├── tictactoe48.png         # 48x48 icon
+│   ├── tictactoe128.png        # 128x128 icon
+├── src/
+│   ├── components/
+│   │   └── TicTacToe.js   # Main game component
+│   ├── App.tsx            # React entry point
+│   ├── main.tsx           # React entry point
+├── index.html             
+├── README.md              # Documentation file
+│── .gitignore             # Files and folders which you don't want to push to githib
+├── package.json           # Project metadata and dependencies
+├── tsconfig.json          # Typescript config file
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Tech Stack:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+-> React.js: For building the user interface.
+-> HTML/SASS: For styling the game board and popup.
+-> JavaScript: Core logic for game functionality.
+-> Chrome Extensions API: Integration with the Chrome browser.
+
+Key Highlights:
+
+-> React Hooks: Manage state and effects for the game logic.
+-> Game Logic: Handles edge cases such as invalid moves, win conditions, and draw scenarios.
+-> Responsive Design: Optimized for the Chrome popup window.
+-> Manifest V3: Leverages the latest standards for Chrome extensions.
+
+Future Enhancements: 
+
+-> Add a score tracker for multiple games.
+-> Implement a 2-player mode.
+-> Add animations and sound effects for better user engagement.
