@@ -6,12 +6,12 @@ type BoardType = (string | null)[];
 
 const App: React.FC = () => {
   const [board, setBoard] = useState<BoardType>(Array(9).fill(null)); // Game board
-  const [userTurn, setUserTurn] = useState(true); // User starts the game
+  const [userTurn, setUserTurn] = useState<boolean>(true); // User starts the game
   const [winner, setWinner] = useState<string | null>(null); // Tracks the winner
-  const [isGameOver, setIsGameOver] = useState(false); // Tracks if the game is over
+  const [isGameOver, setIsGameOver] = useState<boolean>(false); // Tracks if the game is over
 
   // Check if a player has won
-  const calculateWinner = (squares: BoardType): string | null =>  {
+  const calculateWinner = (squares: BoardType): string | null => {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -35,7 +35,6 @@ const App: React.FC = () => {
     return null; // No winner yet
   };
 
-  
   // Handle user click
   const handleClick = (index: number) => {
     if (board[index] || winner || isGameOver) return; // Ignore if cell is filled, game is over, or there's a winner
@@ -98,7 +97,7 @@ const App: React.FC = () => {
 
   return (
     <div className="tictactoe">
-      <h1>Tic-Tac-Toe</h1>
+      <h1>Tic-Tac-Toe ⭕❌</h1>
       {winner ? (
         <h2>{winner === "X" ? "You Win! 🎉" : "Computer Wins! 🎉"}</h2>
       ) : isGameOver ? (
@@ -117,9 +116,11 @@ const App: React.FC = () => {
           </div>
         ))}
       </div>
-      <button className="neu-btn" onClick={resetGame}>Restart Game</button>
+      <button className="neu-btn" onClick={resetGame}>
+        Restart Game
+      </button>
     </div>
   );
-}
+};
 
 export default App;
