@@ -103,7 +103,7 @@ const App: React.FC = () => {
       ) : isGameOver ? (
         <h2>Game Over! It's a Draw.</h2>
       ) : (
-        <h2>{userTurn ? "Your Turn" : "Computer's Turn"}</h2>
+        <h2>{userTurn ? "Your Turn 🧑🏼" : "Computer's Turn 💻"}</h2>
       )}
       <div className="board">
         {board.map((value, index) => (
