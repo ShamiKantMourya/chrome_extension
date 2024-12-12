@@ -59,3 +59,4 @@ Future Enhancements:
 -> Add a score tracker for multiple games.
 -> Implement a 2-player mode.
 -> Add animations and sound effects for better user engagement.
+-> Update UI of the game
