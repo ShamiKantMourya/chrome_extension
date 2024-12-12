@@ -1,15 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import "./app.scss";
 
-function App() {
-  const [board, setBoard] = useState(Array(9).fill(null)); // Game board
+type BoardType = (string | null)[];
+
+const App: React.FC = () => {
+  const [board, setBoard] = useState<BoardType>(Array(9).fill(null)); // Game board
   const [userTurn, setUserTurn] = useState(true); // User starts the game
-  const [winner, setWinner] = useState(null); // Tracks the winner
+  const [winner, setWinner] = useState<string | null>(null); // Tracks the winner
   const [isGameOver, setIsGameOver] = useState(false); // Tracks if the game is over
 
   // Check if a player has won
-  const calculateWinner = (squares) => {
+  const calculateWinner = (squares: BoardType): string | null =>  {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -33,8 +35,9 @@ function App() {
     return null; // No winner yet
   };
 
+  
   // Handle user click
-  const handleClick = (index) => {
+  const handleClick = (index: number) => {
     if (board[index] || winner || isGameOver) return; // Ignore if cell is filled, game is over, or there's a winner
 
     const newBoard = [...board];
@@ -58,7 +61,7 @@ function App() {
   };
 
   // Computer makes a random valid move
-  const computerMove = (currentBoard) => {
+  const computerMove = (currentBoard: BoardType) => {
     const emptyIndices = currentBoard
       .map((value, index) => (value === null ? index : null))
       .filter((value) => value !== null); // Find empty cells
