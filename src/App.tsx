@@ -96,30 +96,35 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="tictactoe">
-      <h1>Tic-Tac-Toe ⭕❌</h1>
-      {winner ? (
-        <h2>{winner === "X" ? "You Win! 🎉" : "Computer Wins! 🎉"}</h2>
-      ) : isGameOver ? (
-        <h2>Game Over! It's a Draw.</h2>
-      ) : (
-        <h2>{userTurn ? "Your Turn 🧑🏼" : "Computer's Turn 💻"}</h2>
-      )}
-      <div className="board">
-        {board.map((value, index) => (
-          <div
-            key={index}
-            className={`cell ${value}`}
-            onClick={() => handleClick(index)}
-          >
-            {value}
-          </div>
-        ))}
+    <>
+      <div className="img-box">
+        <img src="/background.jpg" alt="skyline" />
       </div>
-      <button className="neu-btn" onClick={resetGame}>
-        Restart Game
-      </button>
-    </div>
+      <div className="tictactoe">
+        <h1>Tic-Tac-Toe ⭕❌</h1>
+        {winner ? (
+          <h2>{winner === "X" ? "You Win! 🎉" : "Computer Wins! 🎉"}</h2>
+        ) : isGameOver ? (
+          <h2>Game Over! It's a Draw.</h2>
+        ) : (
+          <h2>{userTurn ? "Your Turn 🧑🏼" : "Computer's Turn 💻"}</h2>
+        )}
+        <div className="board">
+          {board.map((value, index) => (
+            <div
+              key={index}
+              className={`cell ${value}`}
+              onClick={() => handleClick(index)}
+            >
+              {value}
+            </div>
+          ))}
+        </div>
+        <button className="neu-btn" onClick={resetGame}>
+          Restart Game
+        </button>
+      </div>
+    </>
   );
 };
 
