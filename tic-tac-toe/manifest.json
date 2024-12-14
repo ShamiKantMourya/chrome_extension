@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Offline Tic-Tac-Toe",
+  "version": "1.0",
+  "description": "Enjoy playing Tic-Tac-Toe even when you're offline! This lightweight and fun Chrome extension lets you play the classic game right from your browser. Perfect for passing the time when you're disconnected from the internet.",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "tictactoe48.png",
+    "48": "tictactoe48.png",
+    "128": "tictactoe128.png"
+  },
+  "offline_enabled": true,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "tictactoe48.png",
+      "48": "tictactoe48.png",
+      "128": "tictactoe128.png"
+    }
+  }
+}
