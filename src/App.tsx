@@ -9,6 +9,8 @@ const App: React.FC = () => {
   const [userTurn, setUserTurn] = useState<boolean>(true); // User starts the game
   const [winner, setWinner] = useState<string | null>(null); // Tracks the winner
   const [isGameOver, setIsGameOver] = useState<boolean>(false); // Tracks if the game is over
+  const [userScore, setUserScore] = useState<number>(0); // User win count
+  const [computerScore, setComputerScore] = useState<number>(0); // Computer win count
 
   // Check if a player has won
   const calculateWinner = (squares: BoardType): string | null => {
@@ -37,15 +39,16 @@ const App: React.FC = () => {
 
   // Handle user click
   const handleClick = (index: number) => {
-    if (board[index] || winner || isGameOver) return; // Ignore if cell is filled, game is over, or there's a winner
+    if (board[index] || winner || isGameOver) return;
 
     const newBoard = [...board];
-    newBoard[index] = "X"; // User move
+    newBoard[index] = "X";
     setBoard(newBoard);
 
     const gameWinner = calculateWinner(newBoard);
     if (gameWinner) {
       setWinner(gameWinner);
+      if (gameWinner === "X") setUserScore(userScore + 1); // Increment user score
       return;
     }
 
@@ -75,6 +78,7 @@ const App: React.FC = () => {
     const gameWinner = calculateWinner(currentBoard);
     if (gameWinner) {
       setWinner(gameWinner);
+      if (gameWinner === "O") setComputerScore(computerScore + 1); // Increment computer score
       return;
     }
 
@@ -123,6 +127,16 @@ const App: React.FC = () => {
         <button className="neu-btn" onClick={resetGame}>
           Restart Game
         </button>
+      </div>
+      <div className="scores">
+        <div className="score-box user-score">
+          <h3>User 🧑🏼</h3>
+          <p>{userScore}</p>
+        </div>
+        <div className="score-box computer-score">
+          <h3>Computer 💻</h3>
+          <p>{computerScore}</p>
+        </div>
       </div>
     </>
   );
