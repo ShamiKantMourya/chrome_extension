@@ -134,3 +134,78 @@
                   -8px -8px 10px rgba(243, 238, 238, 0.452) inset;
   }
   
+  /* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+    grid-gap: 3px;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+
+  .score-box {
+    width: 120px;
+    height: 80px;
+    font-size: 16px;
+  }
+
+  .neu-btn {
+    width: 180px;
+    height: 45px;
+    font-size: medium;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .board {
+    grid-template-columns: repeat(3, 60px);
+    grid-gap: 2px;
+  }
+
+  .cell {
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+  }
+
+  .score-box {
+    width: 100px;
+    height: 70px;
+    font-size: 14px;
+  }
+
+  .neu-btn {
+    width: 150px;
+    height: 40px;
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .board {
+    grid-template-columns: repeat(3, 50px);
+    grid-gap: 1px;
+  }
+
+  .cell {
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .score-box {
+    width: 80px;
+    height: 60px;
+    font-size: 12px;
+  }
+
+  .neu-btn {
+    width: 120px;
+    height: 35px;
+    font-size: x-small;
+  }
+}
